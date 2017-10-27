@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-10-2017 a las 21:39:04
+-- Tiempo de generación: 27-10-2017 a las 07:27:29
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -30,12 +30,20 @@ CREATE TABLE IF NOT EXISTS `cita` (
   `idCita` int(11) NOT NULL AUTO_INCREMENT,
   `idPaciente` int(11) NOT NULL,
   `idDoctor` int(11) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Hora` time NOT NULL,
+  `Fecha` varchar(25) NOT NULL,
+  `Hora` int(11) NOT NULL,
   PRIMARY KEY (`idCita`),
   KEY `FKCita603156` (`idPaciente`),
   KEY `FKCita579836` (`idDoctor`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`idCita`, `idPaciente`, `idDoctor`, `Fecha`, `Hora`) VALUES
+(1, 1, 1, '27/10/2017', 12),
+(2, 1, 1, '27/10/2017', 13);
 
 -- --------------------------------------------------------
 
@@ -66,7 +74,14 @@ CREATE TABLE IF NOT EXISTS `doctores` (
   `Direccion` varchar(50) NOT NULL,
   `Telefono` varchar(12) NOT NULL,
   PRIMARY KEY (`idDoctor`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `doctores`
+--
+
+INSERT INTO `doctores` (`idDoctor`, `Apellidos`, `Nombre`, `Direccion`, `Telefono`) VALUES
+(1, 'Aguilar', 'Fernando', '2dacalle', '12345678');
 
 -- --------------------------------------------------------
 
@@ -98,7 +113,14 @@ CREATE TABLE IF NOT EXISTS `pacientes` (
   `Foto` blob NOT NULL,
   `ObservGen` varchar(250) NOT NULL,
   PRIMARY KEY (`idPaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `pacientes`
+--
+
+INSERT INTO `pacientes` (`idPaciente`, `Nombre`, `Apellidos`, `DIreccion`, `Telefono`, `Foto`, `ObservGen`) VALUES
+(1, 'Pegre', 'Rafael', '2da calle', '87654321', 0x313131, 'esta delirando');
 
 --
 -- Restricciones para tablas volcadas
