@@ -28,12 +28,7 @@ public class JDAgregarCita extends javax.swing.JDialog {
     DefaultTableModel modeloPacientes;
     
     //---------------------------------------------------------- 
-
-    //-------------creacion de la variable tipo tabla para DOCTORES-----------
-    
-    DefaultTableModel modeloDoctores;
-    
-    //----------------------------------------------------------     
+  
     
     
     public JDAgregarCita(java.awt.Frame parent, boolean modal) {
@@ -47,17 +42,14 @@ public class JDAgregarCita extends javax.swing.JDialog {
         modeloPacientes.setColumnIdentifiers(Titulos1); //le asignamos al modelo el nombre que creamos en la linea anterior
         //------------------------------------------------------------------- 
 
-
-        //--------------inicializacion del disenio de la tabla----------------
-        modeloDoctores = new DefaultTableModel(); //le asignamos todas las funciones al modelo
-        jtDoctor.setModel(modeloDoctores); //le asignamos a la tabla el modelo que creamos
-        String Titulos2[] = { "Apellidos", "Nombre", "Direccion", "Telefono"}; //creamos una variable con el nombre que queremos para la tabla
-        modeloDoctores.setColumnIdentifiers(Titulos2); //le asignamos al modelo el nombre que creamos en la linea anterior
-        //-------------------------------------------------------------------         
+        //---------------------para que al ejecutar esta clase liste de una vez los doctores actuales--------------------------
+        Cita nuevoListar = new Cita();
+        nuevoListar.ColocarDoctoresCBX(cbxDoctores);
+        //---------------------------------------------------------------------------------------------------------------------
+       
         
         //--------para que siempre aparescan ocultos los txt de los id----------
         txtIdPaciente.setVisible(false);
-        txtIdDoctor.setVisible(false);
         
     }
 
@@ -76,17 +68,14 @@ public class JDAgregarCita extends javax.swing.JDialog {
         jtPaciente = new javax.swing.JTable();
         txtApelPaciente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtApelDoctor = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jtDoctor = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         JDTfecha = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         txtIdPaciente = new javax.swing.JTextField();
-        txtIdDoctor = new javax.swing.JTextField();
         txtHora = new javax.swing.JTextField();
+        cbxDoctores = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -114,23 +103,7 @@ public class JDAgregarCita extends javax.swing.JDialog {
         });
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel3.setText("Apellidos del Doctor: ");
-
-        txtApelDoctor.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtApelDoctorKeyPressed(evt);
-            }
-        });
-
-        jtDoctor.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null}
-            },
-            new String [] {
-                "Apellidos", "Nombre", "Direccion", "Telefono"
-            }
-        ));
-        jScrollPane2.setViewportView(jtDoctor);
+        jLabel3.setText("Seleccione un Doctor:");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Fecha:");
@@ -165,38 +138,37 @@ public class JDAgregarCita extends javax.swing.JDialog {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(JDTfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(86, 86, 86)
+                                            .addComponent(jLabel5)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(162, 162, 162)
+                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(453, 453, 453)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtApelPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
                                 .addComponent(txtIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtApelDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtIdDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42))
-                            .addComponent(jScrollPane2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(JDTfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(86, 86, 86)
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                                .addGap(30, 30, 30)
+                                .addComponent(cbxDoctores, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,11 +185,8 @@ public class JDAgregarCita extends javax.swing.JDialog {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtApelDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                    .addComponent(cbxDoctores, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
@@ -228,7 +197,7 @@ public class JDAgregarCita extends javax.swing.JDialog {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -237,7 +206,7 @@ public class JDAgregarCita extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        if(txtIdDoctor.getText().length()==0 || txtIdPaciente.getText().length()==0 || JDTfecha.getDate()==null) //validacion para saber si los campos estan vacios
+        if(txtIdPaciente.getText().length()==0 || JDTfecha.getDate()==null || txtHora.getText().length()==0) //validacion para saber si los campos estan vacios
         {                                                                                    //observar que para el JDate si es igual a null es que esta vacio
             JOptionPane.showMessageDialog(null, "ERROR: Complete la informacion requerida");
         }
@@ -247,13 +216,13 @@ public class JDAgregarCita extends javax.swing.JDialog {
            {
                 //asignacion de los datos a una variable tipo fecha
                 Date fecha = JDTfecha.getDate();
-
+                
                 //creacion de un formato de fecha que se quiera objtener
                 SimpleDateFormat formato = new SimpleDateFormat("d/MM/yyyy");
 
 
                 Cita nuevaCita = new Cita();
-                nuevaCita.ValidacionCita(txtIdPaciente.getText(), formato.format(fecha), Integer.parseInt(txtHora.getText()), txtIdDoctor.getText(), modeloPacientes, modeloDoctores);
+                nuevaCita.BuscarIdDoctor(Integer.parseInt(txtIdPaciente.getText()), formato.format(fecha), Integer.parseInt(txtHora.getText()), cbxDoctores.getSelectedItem().toString(), modeloPacientes);
                         //enviamos los dato                la fcha se envia con el formato creado antes
                         //                                                              la hora la pasamos a int, la parseamos    
                         
@@ -288,15 +257,6 @@ public class JDAgregarCita extends javax.swing.JDialog {
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void txtApelDoctorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApelDoctorKeyPressed
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER)// para que cuando reciva un ENTER haga lo siguiente
-        {
-            Cita nuevaBusqueda = new Cita();
-            nuevaBusqueda.BuscarDoctor(txtApelDoctor.getText(), modeloDoctores);
-        }         
-    }//GEN-LAST:event_txtApelDoctorKeyPressed
 
     /**
      * @param args the command line arguments
@@ -343,6 +303,7 @@ public class JDAgregarCita extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static com.toedter.calendar.JDateChooser JDTfecha;
+    private javax.swing.JComboBox<String> cbxDoctores;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -351,13 +312,9 @@ public class JDAgregarCita extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    public static javax.swing.JTable jtDoctor;
     public static javax.swing.JTable jtPaciente;
-    public static javax.swing.JTextField txtApelDoctor;
     public static javax.swing.JTextField txtApelPaciente;
     public static javax.swing.JTextField txtHora;
-    public static javax.swing.JTextField txtIdDoctor;
     public static javax.swing.JTextField txtIdPaciente;
     // End of variables declaration//GEN-END:variables
 }

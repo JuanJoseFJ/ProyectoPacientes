@@ -31,7 +31,31 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="JDTfecha" min="-2" pref="156" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtHora" min="-2" pref="117" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                                          <Component id="jButton1" min="-2" pref="213" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="453" max="-2" attributes="0"/>
+                                  <Component id="jButton2" min="-2" pref="105" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -39,38 +63,16 @@
                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                               <Component id="txtIdPaciente" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" pref="544" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="544" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtApelDoctor" min="-2" pref="189" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="txtIdDoctor" min="-2" pref="88" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="JDTfecha" min="-2" pref="156" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtHora" min="-2" pref="117" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="cbxDoctores" min="-2" pref="183" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="213" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace pref="52" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="105" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,12 +92,9 @@
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtApelDoctor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtIdDoctor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbxDoctores" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="73" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,7 +107,7 @@
               <Component id="jButton1" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButton2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,41 +169,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Apellidos del Doctor: "/>
+        <Property name="text" type="java.lang.String" value="Seleccione un Doctor:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtApelDoctor">
-      <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtApelDoctorKeyPressed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-      </AuxValues>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTable" name="jtDoctor">
-          <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="1">
-                <Column editable="true" title="Apellidos" type="java.lang.Object"/>
-                <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                <Column editable="true" title="Direccion" type="java.lang.Object"/>
-                <Column editable="true" title="Telefono" type="java.lang.Object"/>
-              </Table>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-          </AuxValues>
-        </Component>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -253,14 +220,19 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtIdDoctor">
+    <Component class="javax.swing.JTextField" name="txtHora">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtHora">
+    <Component class="javax.swing.JComboBox" name="cbxDoctores">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
   </SubComponents>

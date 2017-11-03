@@ -29,12 +29,12 @@ public class JFprincipal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
@@ -42,15 +42,6 @@ public class JFprincipal extends javax.swing.JFrame {
 
         jMenu1.setText("PACIENTES");
         jMenu1.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
-
-        jMenuItem5.setText("Editar paciente");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem5);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("DOCTORES");
@@ -79,11 +70,30 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenu3.add(jMenuItem2);
 
         jMenuItem4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jMenuItem4.setText("Buscar");
+        jMenuItem4.setText("Buscar por Doctor");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
+
+        jMenuItem5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMenuItem5.setText("Buscar por Paciente");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem5);
 
         jMenuItem3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jMenuItem3.setText("Eliminar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -122,6 +132,10 @@ public class JFprincipal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+        
+        JDEditarCita frmEditarCita = new JDEditarCita(new JFprincipal(), true);
+        frmEditarCita.setLocationRelativeTo(null);//se centre        
+        frmEditarCita.setVisible(true);         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -134,13 +148,29 @@ public class JFprincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        
+        JDBuscarCitaDoctor frmcitaBuscada = new JDBuscarCitaDoctor(new JFprincipal(), true);
+        frmcitaBuscada.setLocationRelativeTo(null);//se centre        
+        frmcitaBuscada.setVisible(true);        
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        JDeditarpaciente nuevoeditar = new JDeditarpaciente(null, true);
-        nuevoeditar.setLocationRelativeTo(null);
-        nuevoeditar.setTitle("EDITAR PACIENTE");
-        nuevoeditar.setVisible(true);
+        
+        JDBuscarCitaPaciente frmcitaBuscada = new JDBuscarCitaPaciente(new JFprincipal(), true);
+        frmcitaBuscada.setLocationRelativeTo(null);//se centre        
+        frmcitaBuscada.setVisible(true);        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        
+        JDEliminarCita frmEliminar = new JDEliminarCita(new JFprincipal(), true);
+        frmEliminar.setLocationRelativeTo(null);//se centre        
+        frmEliminar.setVisible(true);          
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
