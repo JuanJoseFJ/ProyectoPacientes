@@ -56,8 +56,13 @@ DefaultTableModel tabla = new DefaultTableModel();
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("BUSCAR MéDICO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 10, 240, 28);
+        jLabel1.setBounds(90, 10, 240, 32);
 
+        bApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bApellidoActionPerformed(evt);
+            }
+        });
         bApellido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 bApellidoKeyPressed(evt);
@@ -205,6 +210,10 @@ DefaultTableModel tabla = new DefaultTableModel();
         Medico limpiar = new Medico();
         limpiar.Limpiar(tabla);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void bApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bApellidoActionPerformed
 
     /**
      * @param args the command line arguments

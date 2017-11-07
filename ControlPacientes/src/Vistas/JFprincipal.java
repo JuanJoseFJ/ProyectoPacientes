@@ -29,6 +29,7 @@ public class JFprincipal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -47,6 +48,17 @@ public class JFprincipal extends javax.swing.JFrame {
 
         jMenu1.setText("PACIENTES");
         jMenu1.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
+
+        jMenuItem6.setFont(new java.awt.Font("Comic Sans MS", 3, 21)); // NOI18N
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
+        jMenuItem6.setText("Buscar");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem6);
+
         jMenuBar1.add(jMenu1);
 
         jMenu6.setText("MEDICO");
@@ -263,6 +275,13 @@ public class JFprincipal extends javax.swing.JFrame {
         buscar.setVisible(true);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        JDBuscarPacientes buscarpaciente = new JDBuscarPacientes(new JFprincipal(), true);
+        buscarpaciente.setLocationRelativeTo(null);
+        buscarpaciente.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,5 +333,6 @@ public class JFprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }
