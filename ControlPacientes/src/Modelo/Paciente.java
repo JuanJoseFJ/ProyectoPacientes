@@ -4,6 +4,7 @@ import Vistas.JDBuscarPacientes;
 import Vistas.JDeditarpaciente;
 import java.awt.Image;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -61,11 +62,47 @@ public void BuscarPaciente(DefaultTableModel modelo, String Apellidos) {
 }
 
 
-public void EliminarPaciente(String Apellidos)
+public void EliminarPaciente(int id)
 {
-    
+    Conexion nuevaConexion = new Conexion();
+        Connection conex;
+        
+        try{
+            nuevaConexion.Conectar();
+            conex= nuevaConexion.getConexion();
+            Statement comando = conex.createStatement();
+            PreparedStatement pps= conex.prepareStatement("DELETE FROM pacientes WHERE idPaciente='"+id+"'");
+            pps.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Paciente eliminado con exito");
+            
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Error"+ e);
+        }
 }
- public void Limpiar(DefaultTableModel modelo)
+
+public void EliminarDiagnostico(int id)
+    {
+        Conexion nuevaConexion = new Conexion();
+        Connection conex;
+        try
+        {
+            nuevaConexion.Conectar();
+            conex= nuevaConexion.getConexion();
+            Statement comando = conex.createStatement();
+            PreparedStatement pps= conex.prepareStatement("DELETE FROM diagnostico WHERE idPaciente='"+id+"'");
+            pps.executeUpdate();
+            
+        }
+        catch(Exception e)
+        {
+                    JOptionPane.showMessageDialog(null,"Error"+e);
+        }
+    }
+
+
+public void Limpiar(DefaultTableModel modelo)
      {
       int filas = modelo.getRowCount();  
       
