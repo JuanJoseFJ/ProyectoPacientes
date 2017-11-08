@@ -1,6 +1,7 @@
 package Modelo;
 
 import Vistas.JDBuscarPacientes;
+import Vistas.JDeditarpaciente;
 import java.awt.Image;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,6 +24,7 @@ public Paciente(String Apellidos,String Nombre, String Direccion,String Telefono
     this.Telefono=Direccion;
     this.Foto=Foto;
 }
+  
 
 public void AgregarPaciente(Paciente NuevoPaciente)
 {
@@ -58,10 +60,7 @@ public void BuscarPaciente(DefaultTableModel modelo, String Apellidos) {
       } 
 }
 
-public void EditarPaciente(String Apellido)
-{
-    
-}
+
 public void EliminarPaciente(String Apellidos)
 {
     
@@ -75,4 +74,25 @@ public void EliminarPaciente(String Apellidos)
           modelo.removeRow(0);
       }
      }
+
+   
+@Override
+    public void EditarPaciente(String Direccion, String tel){
+        Conexion nuevaConexion = new Conexion();
+        Connection conex;
+      
+        try {
+            nuevaConexion.Conectar();
+              conex = nuevaConexion.getConexion();
+              Statement comando = conex.createStatement();
+            comando.executeUpdate("UPDATE  pacientes SET DIreccion='"+Direccion+"',Telefono='"+tel+"' where pacientes.idPaciente='"+JDeditarpaciente.txtid.getText()+"'");
+            JOptionPane.showMessageDialog(null, "modificado exitosamente");
+            conex.close();
+                    } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error no se puede modificar"+e);
+        }
+    }
+
+    
 }

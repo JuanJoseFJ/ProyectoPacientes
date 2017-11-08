@@ -30,6 +30,7 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -46,9 +47,11 @@ public class JFprincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jMenu1.setBackground(new java.awt.Color(0, 255, 204));
         jMenu1.setText("PACIENTES");
         jMenu1.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
 
+        jMenuItem6.setBackground(new java.awt.Color(255, 255, 153));
         jMenuItem6.setFont(new java.awt.Font("Comic Sans MS", 3, 21)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
         jMenuItem6.setText("Buscar");
@@ -58,6 +61,17 @@ public class JFprincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem6);
+
+        jMenuItem7.setBackground(new java.awt.Color(102, 255, 255));
+        jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/document_save_as.png"))); // NOI18N
+        jMenuItem7.setText("Editar Paciente");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
 
         jMenuBar1.add(jMenu1);
 
@@ -282,6 +296,15 @@ public class JFprincipal extends javax.swing.JFrame {
         buscarpaciente.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+   
+        JDeditarpaciente nuevojd = new JDeditarpaciente(new JFprincipal(), true);
+        nuevojd.setTitle("           EDITAR PACIENTE");
+        nuevojd.setLocationRelativeTo(null);
+        nuevojd.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -334,5 +357,6 @@ public class JFprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }
