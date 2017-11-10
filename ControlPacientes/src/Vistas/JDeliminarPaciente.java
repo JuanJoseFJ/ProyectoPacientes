@@ -56,14 +56,20 @@ DefaultTableModel Modelo = new DefaultTableModel();
         jLabel3 = new javax.swing.JLabel();
         txtCd = new javax.swing.JTextField();
         btnEliminarPac2 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 51, 255));
         jLabel1.setText("Control de Pacientes");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 11, -1, -1));
 
         jLabel2.setText("Apellido:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 55, -1, -1));
+        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 52, 160, -1));
 
         btnEliminar.setText("Asignar Eliminacion");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +77,7 @@ DefaultTableModel Modelo = new DefaultTableModel();
                 btnEliminarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 327, -1, -1));
 
         JTdatosPaciente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,14 +89,19 @@ DefaultTableModel Modelo = new DefaultTableModel();
         ));
         jScrollPane1.setViewportView(JTdatosPaciente);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 85, 358, 224));
+
         btnBuscarPaciente.setText("Buscar Paciente");
         btnBuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarPacienteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBuscarPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 51, -1, -1));
 
         jLabel3.setText("Codigo del paciente a Eliminar:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 331, -1, -1));
+        getContentPane().add(txtCd, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 328, 101, -1));
 
         btnEliminarPac2.setText("Eliminiar Paciente");
         btnEliminarPac2.addActionListener(new java.awt.event.ActionListener() {
@@ -97,60 +109,20 @@ DefaultTableModel Modelo = new DefaultTableModel();
                 btnEliminarPac2ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEliminarPac2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 368, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBuscarPaciente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCd, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(btnEliminarPac2)))
-                .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(120, 120, 120))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarPaciente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(btnEliminar))
-                .addGap(18, 18, 18)
-                .addComponent(btnEliminarPac2)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        btnVolver.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Regresar.jpg"))); // NOI18N
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 427, 99, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Salud1.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 430, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -193,6 +165,11 @@ DefaultTableModel Modelo = new DefaultTableModel();
                             JOptionPane.showMessageDialog(null,"Operacion cancelada");
                         }              
     }//GEN-LAST:event_btnEliminarPac2ActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,9 +221,11 @@ DefaultTableModel Modelo = new DefaultTableModel();
     private javax.swing.JButton btnBuscarPaciente;
     public static javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEliminarPac2;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     public static javax.swing.JTextField txtApellido;

@@ -5,17 +5,22 @@
  */
 package Vistas;
 
+
+
 /**
  *
  * @author Admin
  */
 public class JFprincipal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form JFprincipal
      */
     public JFprincipal() {
         initComponents();
+        
+       
+        
     }
 
     /**
@@ -27,6 +32,7 @@ public class JFprincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -50,13 +56,23 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OMS3.1.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 440, 400));
 
         jMenu1.setBackground(new java.awt.Color(0, 255, 204));
         jMenu1.setText("PACIENTES");
         jMenu1.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
 
+        jMenu2.setBackground(new java.awt.Color(255, 51, 0));
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Agregar2.jpg"))); // NOI18N
         jMenu2.setText("Agregar");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
 
+        jmPacientes.setBackground(new java.awt.Color(102, 102, 255));
+        jmPacientes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jmPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Agregar2.jpg"))); // NOI18N
         jmPacientes.setText("Paciente");
         jmPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +81,9 @@ public class JFprincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jmPacientes);
 
+        jmDiagnostic.setBackground(new java.awt.Color(255, 204, 153));
+        jmDiagnostic.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jmDiagnostic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Especialidad.jpg"))); // NOI18N
         jmDiagnostic.setText("Diagnostico");
         jmDiagnostic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +95,7 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenu1.add(jMenu2);
 
         jMenuItem6.setBackground(new java.awt.Color(255, 255, 153));
-        jMenuItem6.setFont(new java.awt.Font("Comic Sans MS", 3, 21)); // NOI18N
+        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
         jMenuItem6.setText("Buscar");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +116,9 @@ public class JFprincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem7);
 
+        jMenuItem8.setBackground(new java.awt.Color(153, 255, 153));
+        jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Eliminar.jpg"))); // NOI18N
         jMenuItem8.setText("Eliminar Paciente");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +192,9 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenu3.setText("CITAS");
         jMenu3.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
 
+        jMenuItem1.setBackground(new java.awt.Color(255, 255, 153));
         jMenuItem1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Agregar2.jpg"))); // NOI18N
         jMenuItem1.setText("Agregar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +203,9 @@ public class JFprincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
+        jMenuItem2.setBackground(new java.awt.Color(204, 204, 255));
         jMenuItem2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Editar.jpg"))); // NOI18N
         jMenuItem2.setText("Editar");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,7 +214,9 @@ public class JFprincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
+        jMenuItem4.setBackground(new java.awt.Color(255, 51, 51));
         jMenuItem4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Buscar.jpg"))); // NOI18N
         jMenuItem4.setText("Buscar por Doctor");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +225,9 @@ public class JFprincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem4);
 
+        jMenuItem5.setBackground(new java.awt.Color(153, 153, 255));
         jMenuItem5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Buscar.jpg"))); // NOI18N
         jMenuItem5.setText("Buscar por Paciente");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +236,9 @@ public class JFprincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem5);
 
+        jMenuItem3.setBackground(new java.awt.Color(0, 255, 51));
         jMenuItem3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Eliminar.jpg"))); // NOI18N
         jMenuItem3.setText("Eliminar");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,17 +260,6 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -393,6 +414,7 @@ public class JFprincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
