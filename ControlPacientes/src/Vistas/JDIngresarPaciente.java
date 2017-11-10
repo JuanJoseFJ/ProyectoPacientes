@@ -97,6 +97,7 @@ public class JDIngresarPaciente extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         txtNombImg = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -166,6 +167,15 @@ public class JDIngresarPaciente extends javax.swing.JDialog {
             }
         });
 
+        btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Regresar.jpg"))); // NOI18N
+        btnRegresar.setText("Volver");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -207,7 +217,10 @@ public class JDIngresarPaciente extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -258,7 +271,8 @@ public class JDIngresarPaciente extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCamara)
                     .addComponent(btnPausar)
-                    .addComponent(btnTomarFoto))
+                    .addComponent(btnTomarFoto)
+                    .addComponent(btnRegresar))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -329,6 +343,11 @@ public class JDIngresarPaciente extends javax.swing.JDialog {
         NuevoP.AgregarPaciente(NuevoP);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -378,6 +397,7 @@ public class JDIngresarPaciente extends javax.swing.JDialog {
     public static javax.swing.JButton btnCamara;
     private javax.swing.JButton btnGuardar;
     public static javax.swing.JButton btnPausar;
+    private javax.swing.JButton btnRegresar;
     public static javax.swing.JButton btnTomarFoto;
     private javax.swing.JButton jButton1;
     public static javax.swing.JFileChooser jFileChooser1;

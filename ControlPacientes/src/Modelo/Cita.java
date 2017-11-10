@@ -2,6 +2,8 @@ package Modelo;
 
 import Vistas.JDAgregarCita;
 import Vistas.JDEditarCita;
+import Vistas.JDIngresarPaciente;
+import Vistas.JFprincipal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -157,7 +159,14 @@ public class Cita  implements itrCita{   //esta clase IMPLEMENTA todo lo de la i
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "El paciente no esta registrado");
+                 
+                int accion = JOptionPane.showConfirmDialog(null, "El paciente no esta registrado, desea agregar uno?");
+                if(accion == JOptionPane.YES_OPTION)
+                {
+                    JDIngresarPaciente frmPaciente = new JDIngresarPaciente(new JFprincipal(), true);
+                    frmPaciente.setLocationRelativeTo(null);
+                    frmPaciente.setVisible(true);
+                }
                 
                 
             }            
