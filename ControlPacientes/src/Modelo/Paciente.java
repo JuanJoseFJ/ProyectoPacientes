@@ -2,7 +2,7 @@ package Modelo;
 
 import Vistas.JDBuscarPacientes;
 import Vistas.JDeditarpaciente;
-import java.awt.Image;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,21 +15,35 @@ String Apellidos;
 String Nombre;
 String Direccion;
 String Telefono;
-Image Foto;
+String Foto;
+String Observaciones;
 
-public Paciente(String Apellidos,String Nombre, String Direccion,String Telefono,Image Foto)
+public Paciente(String Apellidos,String Nombre, String Direccion,String Telefono,String Foto,String Observaciones)
 {
     this.Apellidos=Apellidos;
     this.Nombre=Nombre;
     this.Direccion=Direccion;
-    this.Telefono=Direccion;
+    this.Telefono=Telefono;
     this.Foto=Foto;
+    this.Observaciones = Observaciones;
 }
   
 
 public void AgregarPaciente(Paciente NuevoPaciente)
 {
-    
+    Conexion Conectar = new Conexion();
+    Connection conex;
+    try {
+        FileInputStream archivoF;
+        archivoF = new FileInputStream(NuevoPaciente.Foto);
+        Conectar.Conectar();
+        conex = Conectar.getConexion();
+        Statement comando = conex.createStatement();
+        comando.executeUpdate("insert into Pacientes() values('0','"+NuevoPaciente.Nombre+"','"+NuevoPaciente.Apellidos+"','"+NuevoPaciente.Direccion+"','"+NuevoPaciente.Telefono+"','"+archivoF+"','"+NuevoPaciente.Observaciones+"')");
+        JOptionPane.showMessageDialog(null, "Paciente agregado Correctamente");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null,"Ocurrior un error "+e);
+    }
 }
 
 public void BuscarPaciente(DefaultTableModel modelo, String Apellidos) {
@@ -130,6 +144,20 @@ public void Limpiar(DefaultTableModel modelo)
             JOptionPane.showMessageDialog(null, "error no se puede modificar"+e);
         }
     }
-
+public void AgregarConsulta(int CodPaciente,String Sintomas, String PresionA, String OtrosD)
+    {
+     Conexion Conectar = new Conexion();
+     Connection conex;   
+        try {
+        Conectar.Conectar();
+        conex = Conectar.getConexion();
+        Statement comando = conex.createStatement();
+        comando.executeUpdate("insert into Diagnostico() values('0','"+CodPaciente+"','"+Sintomas+"','"+PresionA+"','"+OtrosD+"')");
+        JOptionPane.showMessageDialog(null, "Diagnostico agregado Correctamente");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Ocurrior un error "+e);
+        }
+    }
     
 }

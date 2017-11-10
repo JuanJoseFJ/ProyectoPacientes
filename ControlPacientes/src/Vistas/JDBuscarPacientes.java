@@ -151,7 +151,7 @@ public class JDBuscarPacientes extends javax.swing.JDialog {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        Paciente limpiartabla = new Paciente(null, null, null, null, null);
+        Paciente limpiartabla = new Paciente(null, null, null, null, null,null);
         limpiartabla.Limpiar(modelo);
         String apellidoS = txtApellido.getText();
         if(apellidoS.length()==0)
@@ -169,7 +169,7 @@ public class JDBuscarPacientes extends javax.swing.JDialog {
             else
             {
         
-        Paciente buscar = new Paciente(null, null, null, null, null);
+        Paciente buscar = new Paciente(null, null, null, null, null,null);
         buscar.BuscarPaciente(modelo, txtApellido.getText());
         txtApellido.setText(null);
         txtApellido.requestFocus();
@@ -200,11 +200,11 @@ public class JDBuscarPacientes extends javax.swing.JDialog {
             else
             {
         
-        Paciente buscar = new Paciente(null, null, null, null, null);
+        Paciente buscar = new Paciente(null, null, null, null, null,null);
         buscar.BuscarPaciente(modelo, txtApellido.getText());
         txtApellido.setText("");
         txtApellido.requestFocus();
-        Paciente limpiartabla = new Paciente(null, null, null, null, null);
+        Paciente limpiartabla = new Paciente(null, null, null, null, null,null);
         limpiartabla.Limpiar(modelo);
             }
         }

@@ -177,7 +177,7 @@ DefaultTableModel Modelo = new DefaultTableModel();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEliminarPac2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPac2ActionPerformed
-        Paciente nuevopaciente =new Paciente(null, null, null, null, null);
+        Paciente nuevopaciente =new Paciente(null, null, null, null, null,null);
         MostrarEliminar ne = new MostrarEliminar();
         tablapacientes np= new tablapacientes();
         int msj=JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el registro?","Borrado",JOptionPane.YES_NO_OPTION);

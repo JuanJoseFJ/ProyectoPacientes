@@ -29,6 +29,9 @@ public class JFprincipal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jmPacientes = new javax.swing.JMenuItem();
+        jmDiagnostic = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -51,6 +54,26 @@ public class JFprincipal extends javax.swing.JFrame {
         jMenu1.setBackground(new java.awt.Color(0, 255, 204));
         jMenu1.setText("PACIENTES");
         jMenu1.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
+
+        jMenu2.setText("Agregar");
+
+        jmPacientes.setText("Paciente");
+        jmPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmPacientesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmPacientes);
+
+        jmDiagnostic.setText("Diagnostico");
+        jmDiagnostic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmDiagnosticActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmDiagnostic);
+
+        jMenu1.add(jMenu2);
 
         jMenuItem6.setBackground(new java.awt.Color(255, 255, 153));
         jMenuItem6.setFont(new java.awt.Font("Comic Sans MS", 3, 21)); // NOI18N
@@ -320,6 +343,20 @@ public class JFprincipal extends javax.swing.JFrame {
         ne.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jmPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmPacientesActionPerformed
+        // TODO add your handling code here:
+        JDIngresarPaciente frmPaciente = new JDIngresarPaciente(new JFprincipal(), true);
+        frmPaciente.setLocationRelativeTo(null);
+        frmPaciente.setVisible(true);
+    }//GEN-LAST:event_jmPacientesActionPerformed
+
+    private void jmDiagnosticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmDiagnosticActionPerformed
+        // TODO add your handling code here:
+        JDIngresarDiagnostico frmDiagnostico = new JDIngresarDiagnostico(new JFprincipal(), true);
+        frmDiagnostico.setLocationRelativeTo(null);
+        frmDiagnostico.setVisible(true);
+    }//GEN-LAST:event_jmDiagnosticActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -357,6 +394,7 @@ public class JFprincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
@@ -374,5 +412,7 @@ public class JFprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jmDiagnostic;
+    private javax.swing.JMenuItem jmPacientes;
     // End of variables declaration//GEN-END:variables
 }

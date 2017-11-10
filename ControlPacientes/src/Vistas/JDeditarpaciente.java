@@ -273,7 +273,7 @@ public class JDeditarpaciente extends javax.swing.JDialog {
 
     private void btnguardareditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardareditarActionPerformed
         // TODO add your handling code here:
-         Paciente nuevopaciente = new Paciente(null, null, null, null, null);
+         Paciente nuevopaciente = new Paciente(null, null, null, null, null,null);
         if(txtdireccion.getText().equals("")||txttel.getText().equals("")){
             JOptionPane.showMessageDialog(null, "campos vacios");
         }
