@@ -169,6 +169,12 @@ public class JDEditarCita extends javax.swing.JDialog {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel7.setText("Nueva Hora:");
 
+        txtHoraEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHoraEditarActionPerformed(evt);
+            }
+        });
+
         txtApellidosPacienteEdit.setFocusable(false);
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -297,80 +303,78 @@ public class JDEditarCita extends javax.swing.JDialog {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        
-        if(JDFechaCitaEditar.getDate()==null || jdFechaEditar.getDate()==null || txtApellidosPacienteEdit.getText().length()==0 || txtHoraEditar.getText().length()==0) //validacion para saber si los campos estan vacios
-        {                                                                                    //observar que para el JDate si es igual a null es que esta vacio
-            JOptionPane.showMessageDialog(null, "ERROR: Complete la informacion requerida");
-        }        
-        else
-        {
-           if(Integer.parseInt(txtHoraEditar.getText())>=1 && Integer.parseInt(txtHoraEditar.getText())<=24) //validamos si la hora es aceptable
-           {    
-                //asignacion de los datos a una variable tipo fecha
-                Date fecha = jdFechaEditar.getDate();
-
-                //asignacion de los datos a una variable tipo fecha
-                Date fecha2 = JDFechaCitaEditar.getDate();                
-                
-                //creacion de un formato de fecha que se quiera objtener
-                SimpleDateFormat formato = new SimpleDateFormat("d/MM/yyyy");
-
-
-              
-            
-                Cita nuevaCita = new Cita();
-                nuevaCita.BuscarIdsEditar(txtApellidosPacienteEdit.getText(), formato.format(fecha), Integer.parseInt(txtHoraEditar.getText()), cbxDoctoresNuevoEditar.getSelectedItem().toString(), modeloCitasEditar,jtCitasEditar, formato.format(fecha2), cbxDoctoresEditar.getSelectedItem().toString());
-                        //enviamos los dato                la fcha se envia con el formato creado antes
-                        //                                                              la hora la pasamos a int, la parseamos
-
-                //nuevaCita.datosFilaSeleccionadaEditar(jTable1, modeloCitasEditar, txtFechaCitaEditar.getText() , cbxDoctoresEditar.getSelectedItem().toString());               
-           }   
-           else //si no es aceptable
-           {
-               JOptionPane.showMessageDialog(null, "EROR: porfavor ingrese una hora aceptable (entre 1 y 24 hrs)");
-           }           
-        }
-        
-                        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jtCitasEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMouseClicked
-        // TODO add your handling code here:
-            
-        //esto es para asignarle un valor al textfield al hacer un clic 
-        txtApellidosPacienteEdit.setText(modeloCitasEditar.getValueAt(jtCitasEditar.getSelectedRow(), 1)+"");
-                    //             obtenemos valores del modelo creado          le decimos que obtenga el valor seleccionado de la fila 
-                                                    //recordar que la tabla es como un vector que empieza desde 0
-    }//GEN-LAST:event_jtCitasEditarMouseClicked
-
-    private void jtCitasEditarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMouseEntered
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jtCitasEditarMouseEntered
-
-    private void jtCitasEditarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMousePressed
-        // TODO add your handling code here:
-      
-        
-    }//GEN-LAST:event_jtCitasEditarMousePressed
-
-    private void jtCitasEditarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMouseReleased
-        // TODO add your handling code here:
-             
-    }//GEN-LAST:event_jtCitasEditarMouseReleased
-
-    private void jtCitasEditarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCitasEditarKeyPressed
-        // TODO add your handling code here:
-       
-        
-    }//GEN-LAST:event_jtCitasEditarKeyPressed
-
     private void btnRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnRegresar1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+        if(JDFechaCitaEditar.getDate()==null || jdFechaEditar.getDate()==null || txtApellidosPacienteEdit.getText().length()==0 || txtHoraEditar.getText().length()==0) //validacion para saber si los campos estan vacios
+        {                                                                                    //observar que para el JDate si es igual a null es que esta vacio
+            JOptionPane.showMessageDialog(null, "ERROR: Complete la informacion requerida");
+        }
+        else
+        {
+            if(Integer.parseInt(txtHoraEditar.getText())>=1 && Integer.parseInt(txtHoraEditar.getText())<=24) //validamos si la hora es aceptable
+            {
+                //asignacion de los datos a una variable tipo fecha
+                Date fecha = jdFechaEditar.getDate();
+
+                //asignacion de los datos a una variable tipo fecha
+                Date fecha2 = JDFechaCitaEditar.getDate();
+
+                //creacion de un formato de fecha que se quiera objtener
+                SimpleDateFormat formato = new SimpleDateFormat("d/MM/yyyy");
+
+                Cita nuevaCita = new Cita();
+                nuevaCita.BuscarIdsEditar(txtApellidosPacienteEdit.getText(), formato.format(fecha), Integer.parseInt(txtHoraEditar.getText()), cbxDoctoresNuevoEditar.getSelectedItem().toString(), modeloCitasEditar,jtCitasEditar, formato.format(fecha2), cbxDoctoresEditar.getSelectedItem().toString());
+                //enviamos los dato                la fcha se envia con el formato creado antes
+                //                                                              la hora la pasamos a int, la parseamos
+
+                //nuevaCita.datosFilaSeleccionadaEditar(jTable1, modeloCitasEditar, txtFechaCitaEditar.getText() , cbxDoctoresEditar.getSelectedItem().toString());
+            }
+            else //si no es aceptable
+            {
+                JOptionPane.showMessageDialog(null, "EROR: porfavor ingrese una hora aceptable (entre 1 y 24 hrs)");
+            }
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jtCitasEditarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCitasEditarKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jtCitasEditarKeyPressed
+
+    private void jtCitasEditarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMouseReleased
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jtCitasEditarMouseReleased
+
+    private void jtCitasEditarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMousePressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jtCitasEditarMousePressed
+
+    private void jtCitasEditarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMouseEntered
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jtCitasEditarMouseEntered
+
+    private void jtCitasEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCitasEditarMouseClicked
+        // TODO add your handling code here:
+
+        //esto es para asignarle un valor al textfield al hacer un clic
+        txtApellidosPacienteEdit.setText(modeloCitasEditar.getValueAt(jtCitasEditar.getSelectedRow(), 1)+"");
+        //             obtenemos valores del modelo creado          le decimos que obtenga el valor seleccionado de la fila
+        //recordar que la tabla es como un vector que empieza desde 0
+    }//GEN-LAST:event_jtCitasEditarMouseClicked
+
+    private void txtHoraEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoraEditarActionPerformed
 
     /**
      * @param args the command line arguments
